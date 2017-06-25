@@ -435,7 +435,7 @@ app
             url: config.services.user_job_state.url,
             token: req.session.token
         });
-        ujs.rpcRequest('list_jobs', [['bulkio'], ''])
+        ujs.rpcRequest('list_jobs', [['bulkprod'], ''])
             .then(function (results) {
                 res.status(200).send({result: results});
             })

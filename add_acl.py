@@ -37,6 +37,8 @@ try:
        dict(principal=user_identity_id,
             principal_type='identity', path=args.sharedDir, permissions='rw'),
    )
+   with open('/var/log/globus_shares.log','w') as f:
+       fwrite('Shared %s with %s' %(args.sharedDir,args.shareName))
 except TransferAPIError as error:
    if error.code != 'Exists':
        raise
